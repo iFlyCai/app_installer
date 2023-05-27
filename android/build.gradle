@@ -1,0 +1,37 @@
+group 'com.zero.app_installer'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.6.2'
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        minSdkVersion 16
+    }
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+}
+
+dependencies {
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+}
